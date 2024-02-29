@@ -96,7 +96,7 @@ _UPT_find_proc_info (unw_addr_space_t as, unw_word_t ip, unw_proc_info_t *pi,
   struct UPT_info *ui = arg;
   int ret = -UNW_ENOINFO;
 
-  if (get_unwind_info (&ui->edi, ui->pid, as, ip,arg) < 0)
+  if (get_unwind_info (&ui->edi, ui->pid, as, ip, arg) < 0)
     return -UNW_ENOINFO;
 
 #if UNW_TARGET_IA64

@@ -634,7 +634,7 @@ elf_w (get_proc_name) (unw_addr_space_t as, pid_t pid, unw_word_t ip,
   int ret;
   char file[PATH_MAX];
 
-  ret = tdep_get_elf_image (as, &ei, pid, ip, &segbase, &mapoff, file, PATH_MAX,arg);
+  ret = tdep_get_elf_image (as, &ei, pid, ip, &segbase, &mapoff, file, PATH_MAX, arg);
   if (ret < 0)
     return ret;
 

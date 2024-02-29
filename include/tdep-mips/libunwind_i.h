@@ -330,7 +330,7 @@ extern void *tdep_uc_addr (ucontext_t *uc, int reg);
 extern int tdep_get_elf_image (unw_addr_space_t as, struct elf_image *ei, pid_t pid, unw_word_t ip,
                                unsigned long *segbase, unsigned long *mapoff,
                                char *path, size_t pathlen,
-                  void *arg);
+                               void *arg);
 extern void tdep_get_exe_image_path (char *path);
 extern int tdep_access_reg (struct cursor *c, unw_regnum_t reg,
                             unw_word_t *valp, int write);
