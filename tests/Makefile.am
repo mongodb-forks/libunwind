@@ -95,10 +95,15 @@ endif
 			Ltest-mem-validate				 \
 			test-async-sig test-flush-cache test-init-remote \
 			test-mem test-reg-state Ltest-varargs		 \
-			Ltest-nomalloc Ltest-nocalloc Lrs-race		 \
-			Ltest-multi-exec-segment
+			Ltest-nomalloc Ltest-nocalloc Lrs-race
  noinst_PROGRAMS_cdep += forker Gperf-simple Lperf-simple \
 			Gperf-trace Lperf-trace
+
+# Needs dl_iterate_phdr() and a linker that supports --section-start, see
+# configure.ac.
+if BUILD_MULTI_EXEC_SEGMENT_TEST
+ check_PROGRAMS_cdep += Ltest-multi-exec-segment
+endif
 
 # unw_init_local2() is not implemented on ia64
 if !ARCH_IA64
